@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+}
+
+
+
+.bx-wrapper .bx-viewport{
+	-moz-box-shadow: 0;
+	box-shadow: 0;
+	border: 0;
+	left: 0;
+}
+
+.bx-wrapper ul{
+	margin: 0;
+	left: -40px;
+}
+
+.bx-wrapper ul li{
+	background-position: center;
+	background-size: cover;
+}
+
+.bx-wrapper .bx-pager{
+	position: relative;
+	top: -36px;
+}
+
+.bx-wrapper{
+	margin: 0;
+}
+
+.bx-controls{
+	height: 0;
+}

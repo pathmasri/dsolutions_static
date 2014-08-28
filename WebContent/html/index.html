@@ -13,18 +13,26 @@
   <script type="text/javascript">
    
   $(document).ready(function(){
-	  $('.bxslider').bxSlider();
+	  var win_height = $(window).height();
+	  $(".bxslider li").height(Math.max(win_height, 400));
+	  
+	  
+	  slider  = $('.bxslider').bxSlider({pause:3000, mode: 'fade'});
+	  slider.startAuto();
 	});
    </script>
 
+<link href="../css/all.css" rel="stylesheet">
 </head>
 <body>
 
 <ul class="bxslider">
-  <li><img src="../images/pic1.jpg" /></li>
-  <li><img src="../images/pic1.jpg" /></li>
-  <li><img src="../images/pic1.jpg" /></li>
-  <li><img src="../images/pic1.jpg" /></li>
+  <li style='background-image: url("../images/pic1.jpg");'></li>
+  <li style='background-image: url("../images/pic2.jpg");'></li>
+  <li style='background-image: url("../images/pic3.jpg");'></li>
+  <li style='background-image: url("../images/pic4.jpg");'></li>
+  <li style='background-image: url("../images/pic5.jpg");'></li>
+  <li style='background-image: url("../images/pic6.jpg");'></li>
 </ul>
 
 </body>
