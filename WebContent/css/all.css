@@ -50,6 +50,7 @@ h1{
 .bx-wrapper ul li{
 	background-position: center;
 	background-size: cover;
+	background-color: #333;
 }
 
 .bx-wrapper .bx-pager{
