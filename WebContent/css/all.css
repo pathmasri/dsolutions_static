@@ -1,6 +1,7 @@
 body{
 	margin: 0;
-	font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+	/* font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif; */
+	font-family: Agency FB;
 }
 
 #head_content * {
@@ -14,11 +15,10 @@ body{
 }
 
 h1{
-	font-size: 24px;
+	font-size: 42px;
 	position: relative;
-	font-size: 24px;
-	left: 260px;
-	top: 33px;
+	left: 237px;
+	top: 6px;
 	color: white;
 	/* text-shadow: 0 2px 8px rgba(0, 0, 0, 1); */
 }
