@@ -1,7 +1,8 @@
 body{
 	margin: 0;
-	/* font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif; */
-	font-family: Agency FB;
+	font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+	min-width: 920px;
+	color: white;
 }
 
 #head_content * {
@@ -15,6 +16,7 @@ body{
 }
 
 h1{
+	font-family: Agency FB;
 	font-size: 42px;
 	position: relative;
 	left: 237px;
@@ -23,45 +25,28 @@ h1{
 	/* text-shadow: 0 2px 8px rgba(0, 0, 0, 1); */
 }
 
-.bx-wrapper .bx-viewport{
-	-moz-box-shadow: 0;
-	box-shadow: 0;
-	border: 0;
-	left: 0;
+.footer div{
+	float: left;
 }
 
-.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
-	background: #666;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
-	background: #666;
-}
-
-.bx-wrapper .bx-pager.bx-default-pager a{
-	background: white;
-}
-
-.bx-wrapper ul{
-	margin: 0;
-	left: -40px;
-}
-
-.bx-wrapper ul li{
-	background-position: center;
-	background-size: cover;
+/* slider */
+.dsolution_slider{
+	margin:0;
+	padding: 0;
+	position: fixed;
+	width: 100%;
 	background-color: #333;
 }
 
-.bx-wrapper .bx-pager{
+.dsolution_slider li{
+	position: absolute;
+	width: 100%;
+	background-position: center 0%;
+	background-size: cover;
+}
+
+/* end slider */
+
+.content{
 	position: relative;
-	top: -36px;
-}
-
-.bx-wrapper{
-	margin: 0;
-}
-
-.bx-controls{
-	height: 0;
 }
