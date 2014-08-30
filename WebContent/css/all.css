@@ -2,51 +2,82 @@ body{
 	margin: 0;
 	font-family: Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
 	min-width: 920px;
-	color: white;
 }
 
 #head_content * {
 	z-index: 1;
-	position: absolute;
+	position: relative;
+	display: inline-block;
 }
 
 #head_content .logo{
-	left: 160px;
+	left: 12px;
 	top: 40px;
 }
 
 h1{
 	font-family: Agency FB;
 	font-size: 42px;
-	position: relative;
-	left: 237px;
-	top: 6px;
-	color: white;
+	left: 20px;
+	top: -130px;
 	/* text-shadow: 0 2px 8px rgba(0, 0, 0, 1); */
+}
+
+h2{
+	margin: 0;
+	padding: 10px;
+}
+
+#vision, #mission{
+	position: absolute;
+	left: 90px;
+}
+#vision{
+	top: 96px;
+}
+#mission{
+	top: 126px;
+}
+#head_content_container{
+	position: absolute;
+	color: white;
+	width: 100%;
+}
+#head_content{
+	width: 900px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#nature_of_business{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	/* text-align: center; */
 }
 
 .footer div{
 	float: left;
 }
 
+.footer{
+	background-image: url("../images/footer.jpg");
+	background-size: cover;
+	color: white;
+}
+
 /* slider */
 .dsolution_slider{
 	margin:0;
 	padding: 0;
-	position: fixed;
-	width: 100%;
 	background-color: #333;
 }
 
 .dsolution_slider li{
 	position: absolute;
 	width: 100%;
-	background-position: center 0%;
+	background-position: center;
 	background-size: cover;
 }
 
 /* end slider */
-
-.content{
-	position: relative;
-}

@@ -1,23 +1,143 @@
+var  screen_height;
+var no_of_screens;
+var scrollable = true;
+// var  window_scrolltop = 0;
+var  window_scrolling = false;
+
 $(document).ready(function(){
-	  var win_height = $(window).height();
-	  $(".dsolution_slider li, .content, .dsolution_slider").height(Math.max(win_height, 540));
+	var win_height = $(window).height();
+	screen_height = Math.max(win_height, 540);
+	$(".dsolution_slider li, .content, .dsolution_slider, #head_content").height(screen_height);
+	no_of_screens = $(".content").length;
+
+	start_sliding($(".dsolution_slider"));
 	  
-	  
-	  // slider  = $('.bxslider').bxSlider({pause:3000, mode: 'fade', pager: false, controls: false});
-	  // slider.startAuto();
-	  
-	  
-	  start_sliding($(".dsolution_slider"));
-	  
-	$(window).scroll(function(){
-		var d = $(window).scrollTop() / ($(document).height() - $(window).height());
-		$(".dsolution_slider li").css("background-position", "center "+d*100+"%");
-		// $(".dsolution_slider li").css("-webkit-filter","grayscale("+d/2+")");
-		// $(".dsolution_slider li").css("filter","grayscale("+d*100/2+"%)");
-	}); 
+	// $(window).scroll(function(){
+		// var d = $(window).scrollTop() / ($(document).height() - $(window).height());
+		// $(".dsolution_slider li").css("background-position", "center "+d*100+"%");
+	// }); 
+	
+	// $(window).scroll(function(){
+		// var t = $(window).scrollTop();
+		// if(window_scrolltop > t){
+			// console.log(1);
+		// }else{
+			// console.log(2);
+		// }
+		// window_scrolltop = t;
+	// });
+	
+	add_scroll();
 });
 
 
+///////////////////////////////////////////////////////
+function add_scroll(){
+	$('body,html').on('DOMMouseScroll mousewheel', function (e) {
+		if(!scrollable){
+			return false;
+		}
+		var next_content = -100;
+		var t = $(window).scrollTop();
+		var current_content = Math.floor(t/screen_height);
+		
+		if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+		//scroll down
+			// console.log('Down');
+			next_content = current_content + 1;
+		} else {
+		//scroll up
+			// console.log('Up');
+			next_content = current_content - 1;
+		}
+		
+		if(next_content == undefined || next_content > no_of_screens -1 || next_content < 0){
+			return;
+		}
+		
+		// console.log(next_content);
+		
+		// $(window).off("DOMMouseScroll mousewheel");
+		scrollable = false;
+		disable_scroll();
+		$('html, body').animate({scrollTop: next_content*screen_height}, 600, function(){
+			// add_scroll();
+			scrollable = true;
+			enable_scroll();
+		});
+		
+		//prevent page fom scrolling
+		return false;
+	});
+	
+	// $(window).on('mousewheel', function(){
+		// $(window).height(screen_height);
+		
+		// var t = $(window).scrollTop();
+		
+		// var next_content = -100;
+		// var current_content = Math.floor(t/screen_height);
+		
+		// if(window_scrolltop > t){
+			// next_content = current_content - 1;
+			// console.log("-1");
+		// }else if(window_scrolltop < t){
+			// next_content = current_content + 1;
+			// console.log("+1");
+		// }
+		// window_scrolltop = t;
+		// if(next_content == undefined || next_content > no_of_screens -1 || next_content < 0){
+			// return;
+		// }
+		// console.log(next_content);
+		// $(window).off("mousewheel");
+		// disable_scroll();
+		// $('html, body').animate({scrollTop: next_content*screen_height}, 600, function(){
+			// add_scroll();
+			// enable_scroll();
+		// });
+	// });
+}
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}
+///////////////////////////////////////////////////////
 
 function start_sliding(parent){
 	parent.children("li").css("opacity", 0);
@@ -38,6 +158,4 @@ function do_slide(parent, i){
 	}
 	setTimeout(function(){do_slide(parent, i)}, 4000);
 }
-
-
 
