@@ -20,10 +20,12 @@ h1{
 	font-size: 42px;
 	left: 20px;
 	top: -130px;
+	color: white;
 	/* text-shadow: 0 2px 8px rgba(0, 0, 0, 1); */
 }
 
 h2{
+	font-family: Agency FB;
 	margin: 0;
 	padding: 10px;
 }
@@ -40,30 +42,51 @@ h2{
 }
 #head_content_container{
 	position: absolute;
-	color: white;
+	color: rgba(255,255,255,0.8);
 	width: 100%;
 }
-#head_content{
+#head_content, .footer_inner{
 	width: 900px;
 	margin: 0 auto;
+	padding: 10px 0;
+}
+#head_content{
 	position: relative;
 }
 
 #nature_of_business{
 	position: absolute;
-	bottom: 10px;
+	bottom: 27px;
 	left: 0;
+	color: white;
 	/* text-align: center; */
 }
 
-.footer div{
+.footer_inner>div{
 	float: left;
+	padding: 8% 10px;
+}
+
+.footer_inner .fb-like-box{
+	height: 270px;
+}
+
+.footer #copyright{
+	position: absolute;
+	bottom: 0;
+	padding: 10px;
+	font-size: 80%;
+}
+
+.footer h2{
+	color: white;
 }
 
 .footer{
 	background-image: url("../images/footer.jpg");
 	background-size: cover;
-	color: white;
+	color: rgba(255,255,255,0.8);
+	position: relative;
 }
 
 /* slider */
@@ -81,3 +104,16 @@ h2{
 }
 
 /* end slider */
+
+
+.content.center{
+	color: #333;
+	margin: 0 auto;
+	width: 900px;
+}
+.content.center .center_inner{
+	padding: 7% 0;
+}
+.content.center .center_inner div{
+	padding: 1% 0;
+}
