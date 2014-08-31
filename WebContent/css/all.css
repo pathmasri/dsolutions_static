@@ -26,12 +26,8 @@ h1{
 
 h2{
 	font-family: Agency FB;
-	padding: 10px 0;
 	margin: 0;
-}
-h2.iconed{
-	padding: 0 0 0 32px;
-	margin: 10px 0;
+	padding: 10px;
 }
 
 #vision, #mission{
@@ -73,24 +69,6 @@ h2.iconed{
 
 .footer_inner .fb-like-box{
 	height: 270px;
-}
-
-.footer_inner .iconed{
-	background: no-repeat url("../images/icons.png");
-}
-
-.footer_inner .address{
-	background-position: -6px -32px;
-}
-
-.footer_inner .hotline{
-	background-position: -6px -64px;
-}
-.footer_inner .fax{
-	background-position: -6px -93px;
-}
-.footer_inner .email{
-	background-position: -6px -125px;
 }
 
 .footer #copyright{
@@ -166,7 +144,7 @@ h2.iconed{
 }
 
 #dot_container div.selected{
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(255,255,255,0.6);
 	width: 15px;
 	height: 15px;
 	box-shadow: 0 0 0px 2px rgba(0,0,0,0.3);
