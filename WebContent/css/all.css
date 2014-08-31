@@ -148,7 +148,7 @@ h2.iconed{
 	z-index: 1;
 	font-size: 42px;
 	line-height: 30px;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 
 #dot_container div{
