@@ -32,14 +32,22 @@ $(document).ready(function(){
 
 
 ///////////////////////////////////////////////////////
+function select_dot(i){
+	$("#dot_container").children().removeClass("selected");
+	$("#dot_container").children(":nth("+i+")").addClass("selected");
+}
 function add_scroll(){
+	var t = $(window).scrollTop();
+	var current_content = Math.floor(t/screen_height);
+	select_dot(current_content);
+	
 	$('body,html').on('DOMMouseScroll mousewheel', function (e) {
 		if(!scrollable){
 			return false;
 		}
 		var next_content = -100;
-		var t = $(window).scrollTop();
-		var current_content = Math.floor(t/screen_height);
+		t = $(window).scrollTop();
+		current_content = Math.floor(t/screen_height);
 		
 		if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
 		//scroll down
@@ -56,6 +64,8 @@ function add_scroll(){
 		}
 		
 		// console.log(next_content);
+		
+		select_dot(next_content);
 		
 		// $(window).off("DOMMouseScroll mousewheel");
 		scrollable = false;
