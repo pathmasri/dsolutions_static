@@ -28,6 +28,7 @@ h2{
 	font-family: Agency FB;
 	padding: 10px 0;
 	margin: 0;
+	color: #44697E;
 }
 h2.iconed{
 	padding: 0 0 0 32px;
@@ -132,16 +133,17 @@ h2.iconed{
 /* end slider */
 
 
-.content.center{
-	color: #333;
+.content.center, .content .center{
+	color: #50515F;
 	margin: 0 auto;
 	width: 900px;
+	line-height: 160%;
 }
 .content.center .center_inner{
-	padding: 7% 0;
+	/* padding: 7% 0; */
 }
 .content.center .center_inner div{
-	padding: 1% 0;
+	padding: 5px 0;
 }
 
 #dot_container{
@@ -174,4 +176,40 @@ h2.iconed{
 	height: 15px;
 	box-shadow: 0 0 0px 2px rgba(0,0,0,0.3);
 	left: -3px;
+}
+
+.tabs{
+	font-family: Agency FB;
+	font-size:30px;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 30px 0 0;
+	border-bottom: 3px solid #E7E7E7;
+}
+.tabs li.selected{
+	color: #44697E;
+}
+.tabs li{
+	display: inline-block;
+	padding: 10px 0;
+	color: #A0A9AD;
+	font-weight: bold;
+	cursor: pointer;
+	width: 200px;
+	text-align: center;
+}
+
+.tab{
+	opacity: 0;
+	display: none;
+}
+
+.tabs_slider{
+	height: 3px;
+	width: 200px;
+	background: #148FD5;
+	display: block;
+	position: relative;
+	top: -3px;
 }

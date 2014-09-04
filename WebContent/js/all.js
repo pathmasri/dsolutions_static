@@ -169,3 +169,47 @@ function do_slide(parent, i){
 	setTimeout(function(){do_slide(parent, i)}, 4000);
 }
 
+$(".tab_container").ready(function(){
+	$(".tab").first().addClass("selected");
+	$(".tabs li").first().addClass("selected");
+	$(".tabs_slider").css("left", $(".tabs li").first().position().left);
+	fade_in($(".tab").first(), function(){});
+	
+	$(".tabs li").click(function(){
+		if($(this).hasClass("selected")){
+			return;
+		}
+		var pre_selected = $(".tab.selected");
+		$(".tabs li.selected").removeClass("selected");
+		$(".tab.selected").removeClass("selected");
+		var fade_in_ele = $(".tab:nth-child("+($(".tabs li").index($(this)) + 1)+")");
+		var selected_tabs_li = $(".tabs li:nth-child("+($(".tabs li").index($(this)) + 1)+")");
+		selected_tabs_li.addClass("selected");
+		move_slider_to(selected_tabs_li);
+		fade_in_ele.addClass("selected");
+		fade_out(
+			pre_selected,
+			function(){
+				fade_in(fade_in_ele, function(){});
+			}
+		);
+	});
+});
+
+function fade_in(ele, next_function){
+	ele.css("display", "block");
+	ele.animate({opacity:1}, {duration: 240 ,complete: function() {
+		next_function();
+    }});
+}
+
+function fade_out(ele, next_function){
+	ele.animate({opacity:0}, {duration: 240 ,complete: function() {
+		ele.css("display", "none");
+		next_function();
+    }});
+}
+
+function move_slider_to(ele){
+	$(".tabs_slider").stop(true).animate({left: ele.position().left},{duration: 600});
+}
