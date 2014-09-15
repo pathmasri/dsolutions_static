@@ -146,6 +146,26 @@ h2.iconed{
 	padding: 5px 0;
 }
 
+.center_inner .tabs li.selected div{
+	background-color: #44697E;
+}
+.center_inner .tabs li div{
+	background: no-repeat url("../images/m-icons.png");
+	width: 64px;
+	background-color: #A0A9AD;
+	height: 64px;
+	margin: 0 60px;
+}
+.center_inner .tabs li div.prod{
+	background-position: 0 -64px;
+}
+.center_inner .tabs li div.proj{
+	background-position: 0 -128px;
+}
+.center_inner .tabs li div.testi{
+	background-position: 0 -192px;
+}
+
 #dot_container{
 	position: fixed;
 	right: 42px;
